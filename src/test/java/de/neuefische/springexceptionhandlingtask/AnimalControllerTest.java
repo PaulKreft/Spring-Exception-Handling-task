@@ -32,7 +32,7 @@ class AnimalControllerTest {
     }
 
     @Test
-    void getAllAnimals_whenPathVariableIsCat_throwNoSuchElementException() throws Exception {
+    void getAllAnimals_whenGetAllAnimals_throwNoSuchElementException() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/animals"))
                 .andExpect(MockMvcResultMatchers.status().isNotFound())
                 .andExpect(result -> assertInstanceOf(NoSuchElementException.class, result.getResolvedException()))

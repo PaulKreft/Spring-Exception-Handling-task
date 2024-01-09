@@ -24,7 +24,7 @@ class CarControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void getCarBrandTest_whenPathVariableIsCat_throwIllegalArgumentException() throws Exception {
+    void getCarBrandTest_whenPathVariableIsAudi_throwIllegalArgumentException() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/cars/audi"))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
                 .andExpect(result -> assertInstanceOf(IllegalArgumentException.class, result.getResolvedException()))
@@ -32,7 +32,7 @@ class CarControllerTest {
     }
 
     @Test
-    void getAllCars_whenPathVariableIsCat_throwNoSuchElementException() throws Exception {
+    void getAllCars_whenGetAllCars_throwNoSuchElementException() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/cars"))
                 .andExpect(MockMvcResultMatchers.status().isNotFound())
                 .andExpect(result -> assertInstanceOf(NoSuchElementException.class, result.getResolvedException()))
